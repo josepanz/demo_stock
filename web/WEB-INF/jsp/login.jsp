@@ -52,7 +52,7 @@
                     <form role="form" id="form"> 
                         <fieldset> 
                             <div class="form-group"> 
-                                <input class="form-control" placeholder="Usuario" name="user" type="text" autofocus id="username" > 
+                                <input class="form-control" placeholder="Usuario" name="username" type="text" autofocus id="username" > 
                             </div> 
                             <div class="form-group"> 
                                 <input class="form-control" placeholder="Password" name="password" type="password" value="" id="pass"> 
