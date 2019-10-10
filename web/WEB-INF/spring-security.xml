@@ -13,7 +13,7 @@
         <intercept-url pattern="/city.htm" access="hasAnyRole('Administrador')"/>
         <intercept-url pattern="/editCity.htm" access="hasAnyRole('Administrador')"/>                                             
         <intercept-url pattern="/addCity.htm" access="hasAnyRole('Administrador')"/> 
-   
+        <intercept-url pattern="/deleteCity.htm" access="hasAnyRole('Administrador')"/> 
         <form-login login-page="/login.htm" default-target-url="/index.htm"  
                     login-processing-url="/j_spring_security_check" authentication-failure-url="/login.htm?error" 
                     username-parameter="username"
