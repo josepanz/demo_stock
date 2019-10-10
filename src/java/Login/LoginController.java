@@ -27,13 +27,13 @@ public class LoginController {
         return "login";
 
     }  
-     
+     /*
      @RequestMapping("/index.htm")
     public ModelAndView hello(ModelMap model, Principal principal) {
         JOptionPane.showMessageDialog(null, "llego al index");
         String loggedInUserName = principal.getName();
         
         return new ModelAndView("index", "email", loggedInUserName);
-    }
+    }*/
     
 }
