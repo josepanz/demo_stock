@@ -5,6 +5,8 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
+
 <!DOCTYPE html> 
 <html> 
  
@@ -49,7 +51,8 @@
                     <h3 class="panel-title">INGRESE SUS CREDENCIALES</h3> 
                 </div> 
                 <div class="panel-body"> 
-                    <form role="form" id="form"> 
+                    <form name='loginForm' action="<c:url value='j_spring_security_check'/>" method='POST'> 
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> 
                         <fieldset> 
                             <div class="form-group"> 
                                 <input class="form-control" placeholder="Usuario" name="username" type="text" autofocus id="username" > 

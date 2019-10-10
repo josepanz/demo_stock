@@ -21,5 +21,6 @@
     p:password="${jdbc.password}" /-->
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
-  
+    <import resource="spring-security.xml"/> 
+<bean class="Login.LoginController" id="loginController"/>
 </beans>
