@@ -35,7 +35,8 @@
                 <!-- Paginas de Pais-->             
                 <prop key="addCountry.htm">countryController</prop>
                 <prop key="country.htm">countryController</prop>
-
+                <!-- Paginas de Moneda(Currency)-->  
+                <prop key="currency.htm">currencyController</prop>
             </props>
         </property>
     </bean>
@@ -55,6 +56,8 @@
     <!--Controladores de Departamento -->
     <bean name="editDepartamentController" class="Departament.EditDepartamentController"/>
     <bean name="deleteDepartamentController" class="Departament.DeleteDepartamentController"/>
+    <!--Controladores de Moneda(Currency) -->
+    <bean name="currencyController" class="Currency.CurrencyController"/>
     <!--Controladores de pagina de inicio -->
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"

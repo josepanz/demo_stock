@@ -9,11 +9,30 @@
     http://www.springframework.org/schema/security/spring-security-3.2.xsd">
   
 <http auto-config="true" use-expressions="true">
+        <!-- INDEX --> 
         <intercept-url pattern="/index.htm" access="hasAnyRole('Administrador')"/>
+        <!-- CITY--> 
         <intercept-url pattern="/city.htm" access="hasAnyRole('Administrador')"/>
         <intercept-url pattern="/editCity.htm" access="hasAnyRole('Administrador')"/>                                             
         <intercept-url pattern="/addCity.htm" access="hasAnyRole('Administrador')"/> 
         <intercept-url pattern="/deleteCity.htm" access="hasAnyRole('Administrador')"/> 
+        <!--DEPARTAMENT-->
+        <intercept-url pattern="/departament.htm" access="hasAnyRole('Administrador')"/> 
+        <intercept-url pattern="/editDepartament.htm" access="hasAnyRole('Administrador')"/> 
+        <intercept-url pattern="/addDepartament.htm" access="hasAnyRole('Administrador')"/> 
+        <intercept-url pattern="/deleteDepartament.htm" access="hasAnyRole('Administrador')"/>
+        <!--COUNTRY-->
+        <intercept-url pattern="/country.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/editCountry.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/addCountry.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/deleteCountry.htm" access="hasAnyRole('Administrador')"/>     
+        <!--CURRENCY-->
+        <intercept-url pattern="/currency.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/editCurrency.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/addCurrency.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/deleteCurrency.htm" access="hasAnyRole('Administrador')"/>
+        
+        <!---->
         <form-login login-page="/login.htm" default-target-url="/index.htm"  
                     login-processing-url="/j_spring_security_check" authentication-failure-url="/login.htm?error" 
                     username-parameter="username"
@@ -29,7 +48,7 @@
             
         -->   
     </http>
-    
+   
     <authentication-manager alias="authenticationManager">
         <authentication-provider>
            <user-service>
