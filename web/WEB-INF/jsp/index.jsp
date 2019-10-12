@@ -2,6 +2,6 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <t:index>
     <jsp:body>
-        <h1>PAGINA INDEX</h1> 
+        <h1>Bienvenido!</h1> 
     </jsp:body>
 </t:index>

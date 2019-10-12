@@ -29,12 +29,12 @@
             <div class="bg-light border-right" id="sidebar-wrapper">
                 <div class="sidebar-heading">Menu </div>
                 <div class="list-group list-group-flush">
-                    <a href="city.htm" class="list-group-item list-group-item-action bg-light" target="frimeList" onclick="toggleIfrm(this.href)">Ciudades</a>
-                    <a href="departament.htm" class="list-group-item list-group-item-action bg-light" target="frimeList" onclick="toggleIfrm(this.href)">Departamentos</a>
-                    <a href="country.htm" class="list-group-item list-group-item-action bg-light" target="frimeList" onclick="toggleIfrm(this.href)">Paises</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+                    <a id="cityId" href="city.htm" class="list-group-item list-group-item-action bg-light" ">Ciudades</a>
+                    <a id="departamentId" href="departament.htm" class="list-group-item list-group-item-action bg-light" >Departamentos</a>
+                    <a id="countryId" href="country.htm" class="list-group-item list-group-item-action bg-light">Paises</a>
+                    <a id="" href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+                    <a id="" href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+                    <a id="" href="#" class="list-group-item list-group-item-action bg-light">Status</a>
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->
@@ -65,7 +65,7 @@
                                     <a class="dropdown-item" href="#">Action</a>
                                     <a class="dropdown-item" href="#">Another action</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="login.htm">Salir</a>
+                                    <a class="dropdown-item" href="salir">Salir</a>
                                 </div>
                             </li>
                         </ul>
@@ -84,7 +84,6 @@
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="vendor/bootstrap/js/base.js"></script>
         <!-- Menu Toggle Script -->
         <script>
                         $("#menu-toggle").click(function (e) {
@@ -102,7 +101,16 @@
                             
                         });
         </script>
-
+        <<script>
+            function indexViewOrNot(href) {
+               var location = window.location;
+               if(location == href){
+                   window.location = "index.htm";
+                   alert(location);
+               }
+               
+           }
+        </script>
     </body>
 
 </html>
