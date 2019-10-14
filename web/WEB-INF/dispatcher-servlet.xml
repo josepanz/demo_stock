@@ -22,19 +22,25 @@
                 <!--> Paginas Iniciales-->
                 <prop key="login.htm">loginController</prop>  
                 <prop key="index.htm">indexController</prop>
+                
                 <!-- Paginas de Ciudad-->
                 <prop key="city.htm">cityController</prop>
                 <prop key="addCity.htm">cityController</prop>
                 <prop key="editCity.htm">editCityController</prop>
                 <prop key="deleteCity.htm">deleteCityController</prop>
+                
                 <!-- Paginas de Departamento-->             
                 <prop key="addDepartament.htm">departamentController</prop>
                 <prop key="departament.htm">departamentController</prop>
                 <prop key="editDepartament.htm">editDepartamentController</prop>
                 <prop key="deleteDepartament.htm">deleteDepartamentController</prop>
+                
                 <!-- Paginas de Pais-->             
                 <prop key="addCountry.htm">countryController</prop>
                 <prop key="country.htm">countryController</prop>
+                <prop key="editCountry.htm">editCountryController</prop>
+                <prop key="deleteCountry.htm">deleteCountryController</prop>
+                
                 <!-- Paginas de Moneda(Currency)-->  
                 <prop key="currency.htm">currencyController</prop>
             </props>
@@ -49,22 +55,31 @@
     <!--
     The index controller.
     -->
-   <!--Controladores de Ciudades -->
+    <!--Controladores de Ciudades -->
     <bean name="cityController" class="City.CityController"/>
     <bean name="editCityController" class="City.EditCityController"/>
     <bean name="deleteCityController" class="City.DeleteCityController"/>
+    
     <!--Controladores de Departamento -->
+    <bean name="departamentController" class="Departament.DepartamentController"/>
     <bean name="editDepartamentController" class="Departament.EditDepartamentController"/>
     <bean name="deleteDepartamentController" class="Departament.DeleteDepartamentController"/>
+    
+    <!--Controladores de Paises -->
+    <bean name="countryController" class="Country.CountryController"/>
+    <bean name="editCountryController" class="Country.EditCountryController"/>
+    <bean name="deleteCountryController" class="Country.DeleteCountryController"/>   
+    
     <!--Controladores de Moneda(Currency) -->
     <bean name="currencyController" class="Currency.CurrencyController"/>
+    
     <!--Controladores de pagina de inicio -->
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
     
-    <bean name="departamentController" class="Departament.DepartamentController"/>
-    <bean name="countryController" class="Country.CountryController"/>
+
+
     
     <!--
     Login Controller

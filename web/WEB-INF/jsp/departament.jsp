@@ -11,10 +11,10 @@
                 </p>
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
-                    <th>id</th>
-                    <th>code</th>
-                    <th>Descripcion</th>
-                    <th>Pais</th>
+                    <th>Id</th>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>País</th>
                     <th>Fecha Agregada</th>
                     <th>Acciones</th>
                     </thead>

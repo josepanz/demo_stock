@@ -10,12 +10,13 @@
             </div>
         </c:if>
         <div class="container">
-            <div class="row">
-                <h1>
+            <h1>
                     Ingrese sus datos 
                     <a href="departament.htm" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
-                </h1>                   
-                <form:form method="post" commandName="departament" >
+                </h1>
+            <div class="row">
+                                   
+                <form:form method="post" commandName="departament" style="width:80%;height: 80%" >
                     <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                     <p>
                         <form:label path="code">Codigo</form:label>

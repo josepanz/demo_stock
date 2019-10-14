@@ -11,10 +11,11 @@
                 </p>
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
-                    <th>id</th>
-                    <th>codigo</th>
-                    <th>Descripcion</th>
+                    <th>Id</th>
+                    <th>Código</th>
+                    <th>Descripción</th>
                     <th>Fecha Agregada</th>
+                    <th>Acciones</th>
                     </thead>
                     <tbody>
                         <c:forEach items="${datos}" var="dato">
@@ -23,6 +24,10 @@
                                 <td><c:out value="${dato.code}"/></td>
                                 <td><c:out value="${dato.description}"/></td>
                                 <td><c:out value="${dato.creation_date}"/></td>
+                                <td>
+                                    <a href="editCountry.htm?id=${dato.id}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                    <a href="deleteCountry.htm?id=${dato.id}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>

@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Inicio</title>
+        <title >Inicio</title>
 
         <!-- Bootstrap core CSS -->
         <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  /-->   
@@ -27,16 +27,71 @@
 
             <!-- Sidebar -->
             <div class="bg-light border-right" id="sidebar-wrapper">
-                <div class="sidebar-heading">Menu </div>
+                <div class="sidebar-heading text-primary">Menu </div>
                 <div class="list-group list-group-flush">
-                    <a id="cityId" href="city.htm" class="list-group-item list-group-item-action bg-light" ">Ciudades</a>
-                    <a id="departamentId" href="departament.htm" class="list-group-item list-group-item-action bg-light" >Departamentos</a>
-                    <a id="countryId" href="country.htm" class="list-group-item list-group-item-action bg-light">Paises</a>
-                    <a id="" href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-                    <a id="" href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-                    <a id="" href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+                    <!-- Maestro de Informacion-->
+                    <p>
+                        <a class="list-group-item list-group-item-action bg-light text-primary" data-toggle="collapse" href="#collapseMaster" role="button" aria-expanded="false" aria-controls="collapseMaster">
+                            Maestro
+                        </a></p>
+                    <div class="collapse" id="collapseMaster">
+                        <div class="card card-body bg-light">
+                            <p>
+                                <a class="list-group-item list-group-item-action bg-light text-primary" data-toggle="collapse" href="#collapsePerson" role="button" aria-expanded="false" aria-controls="collapsePerson">
+                                    Personas
+                                </a></p>
+                            <div class="collapse" id="collapsePerson">
+                                <div class="card card-body bg-light">
+                                    <a id="currencyId" href="#" class="list-group-item-action bg-light" >Clientes</a>
+                                    <a id="currencyExchangeId" href="#" class="list-group-item-action bg-light" >Empleados</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapseMaster">
+                        <div class="card card-body bg-light">
+                            <p>
+                                <a class="list-group-item list-group-item-action bg-light text-primary" data-toggle="collapse" href="#collapseLocation" role="button" aria-expanded="false" aria-controls="collapseLocation">
+                                    Localidades
+                                </a></p>
+                            <div class="collapse" id="collapseLocation">
+                                <div class="card card-body bg-light">
+                                    <a id="cityId" href="city.htm" class="list-group-item-action bg-light" >Ciudades</a>
+                                    <a id="departamentId" href="departament.htm" class="list-group-item-action bg-light" >Departamentos</a>
+                                    <a id="countryId" href="country.htm" class=" list-group-item-action bg-light">Paises</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapseMaster">
+                        <div class="card card-body bg-light">
+                            <p>
+                                <a class="list-group-item list-group-item-action bg-light text-primary" data-toggle="collapse" href="#collapseCurrency" role="button" aria-expanded="false" aria-controls="collapseCurrency">
+                                    Monedas
+                                </a></p>
+                            <div class="collapse" id="collapseCurrency">
+                                <div class="card card-body bg-light">
+                                    <a id="currencyId" href="#" class="list-group-item-action bg-light" >Monedas</a>
+                                    <a id="currencyExchangeId" href="#" class="list-group-item-action bg-light" >Cambio Moneda</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Configuraciones -->
+                    <p>
+                        <a class="list-group-item list-group-item-action bg-light text-primary" data-toggle="collapse" href="#collapseOrganization" role="button" aria-expanded="false" aria-controls="collapseOrganization">
+                            Organizacion
+                        </a></p>
+                    <div class="collapse" id="collapseOrganization">
+                        <div class="card card-body bg-light">
+                            <a id="" href="#" class="list-group-item list-group-item-action bg-light text-primary">Usuario</a>
+                            <a id="" href="#" class="list-group-item list-group-item-action bg-light text-primary">Grupo</a>
+                            <a id="" href="#" class="list-group-item list-group-item-action bg-light text-primary">Cargos</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <!-- /#sidebar-wrapper -->
 
             <!-- Page Content -->
@@ -52,16 +107,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                                <a class="nav-link text-primary" href="index.htm">Inicio <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link text-primary glyphicon glyphicon-user" href="#"></a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Dropdown
+                                <a class="nav-link dropdown-toggle text-primary glyphicon glyphicon-wrench" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right text-primary" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Action</a>
                                     <a class="dropdown-item" href="#">Another action</a>
                                     <div class="dropdown-divider"></div>
@@ -86,30 +141,20 @@
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- Menu Toggle Script -->
         <script>
-                        $("#menu-toggle").click(function (e) {
-                            e.preventDefault();
-                            //se realiza el cambio de texto del boton
-                            var buttonValue = document.getElementById("toggleButton").value ;
-                            if (buttonValue == undefined || buttonValue == "Ocultar") {
-                                document.getElementById("toggleButton").innerHTML = "Mostrar";
-                                document.getElementById("toggleButton").value = "Mostrar";
-                            } else if (buttonValue == "Mostrar") {
-                                document.getElementById("toggleButton").innerHTML = "Ocultar";
-                                document.getElementById("toggleButton").value = "Ocultar";
-                            }
-                            $("#wrapper").toggleClass("toggled");
-                            
-                        });
-        </script>
-        <<script>
-            function indexViewOrNot(href) {
-               var location = window.location;
-               if(location == href){
-                   window.location = "index.htm";
-                   alert(location);
-               }
-               
-           }
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                //se realiza el cambio de texto del boton
+                var buttonValue = document.getElementById("toggleButton").value;
+                if (buttonValue == undefined || buttonValue == "Ocultar") {
+                    document.getElementById("toggleButton").innerHTML = "Mostrar";
+                    document.getElementById("toggleButton").value = "Mostrar";
+                } else if (buttonValue == "Mostrar") {
+                    document.getElementById("toggleButton").innerHTML = "Ocultar";
+                    document.getElementById("toggleButton").value = "Ocultar";
+                }
+                $("#wrapper").toggleClass("toggled");
+
+            });
         </script>
     </body>
 
