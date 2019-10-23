@@ -43,6 +43,9 @@
                 
                 <!-- Paginas de Moneda(Currency)-->  
                 <prop key="currency.htm">currencyController</prop>
+                <prop key="addCurrency.htm">currencyController</prop>
+                <prop key="editCurrency.htm">editCurrencyController</prop>
+                <prop key="deleteCurrency.htm">deleteCurrencyController</prop>
             </props>
         </property>
     </bean>
@@ -72,6 +75,8 @@
     
     <!--Controladores de Moneda(Currency) -->
     <bean name="currencyController" class="Currency.CurrencyController"/>
+    <bean name="editCurrencyController" class="Currency.EditCurrencyController"/>
+    <bean name="deleteCurrencyController" class="Currency.DeleteCurrencyController"/>
     
     <!--Controladores de pagina de inicio -->
     <bean name="indexController"

@@ -34,7 +34,7 @@ public class CurrencyController {
     }
 
     @RequestMapping("currency.htm")
-    public ModelAndView city() {
+    public ModelAndView currency() {
         ModelAndView mav = new ModelAndView();
         List datos = this.jdbcTemplate.queryForList("SELECT * FROM currency");
         mav.addObject("datos", datos);
@@ -43,16 +43,16 @@ public class CurrencyController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView addCity() {
+    public ModelAndView addCurrency() {
         ModelAndView mav = new ModelAndView();
-        mav.addObject("currency", new City());
+        mav.addObject("currency", new Currency());
         mav.setViewName("addCurrency");
         return mav;
     }
     //recibir y validar datos del formulario
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView addCity(Model model,
+    public ModelAndView addCurrency(Model model,
             @ModelAttribute("currency") Currency c,
             BindingResult result, SessionStatus status
     ) throws SQLException {
@@ -71,8 +71,8 @@ public class CurrencyController {
                     + "	 code, symbol, description, creation_date)\n"
                     + "	VALUES ( upper(?), ?, ?, current_timestamp);", c.getCode(), c.getDescription(), c.getSymbol());
             ModelAndView mav = new ModelAndView();
-            mav.setViewName("addCity");
-            model.addAttribute("city", new City());//al formulario inicializamos con el contructor vacio, un objeto vacio
+            mav.setViewName("addCurrency");
+            model.addAttribute("currency", new Currency());//al formulario inicializamos con el contructor vacio, un objeto vacio
             mav.addObject("mensaje", "Insertado Correctamente");//mensaje  
             // return new ModelAndView("redirect:/formCity.htm","mensaje","asdasdsad");//tambien de esta forma mas directa
             return mav;
