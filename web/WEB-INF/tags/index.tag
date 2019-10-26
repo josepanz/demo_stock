@@ -42,8 +42,8 @@
                                 </a></p>
                             <div class="collapse" id="collapsePerson">
                                 <div class="card card-body bg-success border-white ">
-                                    <a id="currencyId" href="#" class="list-group-item-action bg-success text-white" >Clientes</a>
-                                    <a id="currencyExchangeId" href="#" class="list-group-item-action bg-success text-white" >Empleados</a>
+                                    <a id="customerId" href="#" class="list-group-item-action bg-success text-white" >Clientes</a>
+                                    <a id="employeedId" href="#" class="list-group-item-action bg-success text-white" >Empleados</a>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
                                 </a></p>
                             <div class="collapse" id="collapseCurrency">
                                 <div class="card card-body bg-success border-white">
-                                    <a id="currencyId" href="#" class="list-group-item-action bg-success text-white" >Monedas</a>
+                                    <a id="currencyId" href="currency.htm" class="list-group-item-action bg-success text-white" >Monedas</a>
                                     <a id="currencyExchangeId" href="#" class="list-group-item-action bg-success text-white" >Cambio Moneda</a>
                                 </div>
                             </div>
