@@ -46,6 +46,12 @@
                 <prop key="addCurrency.htm">currencyController</prop>
                 <prop key="editCurrency.htm">editCurrencyController</prop>
                 <prop key="deleteCurrency.htm">deleteCurrencyController</prop>
+                
+                   <!-- Paginas de Familia de Productos (productFamily)-->  
+                <prop key="productFamily.htm">productFamilyController</prop>
+                <prop key="addProductFamily.htm">productFamilyController</prop>
+                <prop key="editProductFamily.htm">editProductFamilyController</prop>
+                <prop key="deleteProductFamily.htm">deleteProductFamilyController</prop>
             </props>
         </property>
     </bean>
@@ -78,14 +84,17 @@
     <bean name="editCurrencyController" class="Currency.EditCurrencyController"/>
     <bean name="deleteCurrencyController" class="Currency.DeleteCurrencyController"/>
     
+    <!--Controladores de Familia de Productos (productFamily) -->
+    <bean name="productFamilyController" class="ProductFamily.ProductFamilyController"/>
+    <bean name="editCurrencyController" class="ProductFamily.EditProductFamilyController"/>
+    <bean name="deleteProductFamilyController" class="ProductFamily.DeleteProductFamilyController"/>
+    
     <!--Controladores de pagina de inicio -->
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
     
 
-
-    
     <!--
     Login Controller
     -->
