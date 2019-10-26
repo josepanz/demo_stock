@@ -86,7 +86,7 @@
     
     <!--Controladores de Familia de Productos (productFamily) -->
     <bean name="productFamilyController" class="ProductFamily.ProductFamilyController"/>
-    <bean name="editCurrencyController" class="ProductFamily.EditProductFamilyController"/>
+    <bean name="editProductFamilyController" class="ProductFamily.EditProductFamilyController"/>
     <bean name="deleteProductFamilyController" class="ProductFamily.DeleteProductFamilyController"/>
     
     <!--Controladores de pagina de inicio -->

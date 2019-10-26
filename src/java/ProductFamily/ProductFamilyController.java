@@ -49,7 +49,7 @@ public class ProductFamilyController {
      @RequestMapping("productFamily.htm")
         public ModelAndView productFamily(){
         ModelAndView mav = new ModelAndView();
-        String query = "SELECT c.id, c.code, c.description, c.creation_date FROM product_family c ";
+        String query = "SELECT c.id, c.code, c.name, c.creation_date FROM product_family c ";
         List datos =this.jdbcTemplate.queryForList(query);
         mav.addObject("datos",datos);
         mav.setViewName("productFamily");
@@ -86,8 +86,8 @@ public class ProductFamilyController {
                 + "	WHERE id=1;", c.getCode(), c.getDescription());
           */
           this.jdbcTemplate.update("INSERT INTO public.product_family(\n" +
-"	 code, description, creation_date)\n" +
-"	VALUES ( upper(?), ?, current_timestamp);",c.getCode(),c.getDescription());
+"	 code, name, creation_date, active)\n" +
+"	VALUES ( upper(?), ?, current_timestamp, true);",c.getCode(),c.getDescription());
             ModelAndView mav = new ModelAndView();
             mav.setViewName("addProductFamily");
             model.addAttribute("productFamily",new ProductFamily());//al formulario inicializamos con el contructor vacio, un objeto vacio

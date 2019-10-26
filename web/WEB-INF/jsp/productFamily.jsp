@@ -3,7 +3,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <t:index>
     <jsp:body>
-        <h1>Pais</h1>        
+        <h1>Familia de Productos</h1>        
         <div class="container">
             <div class="row">
                 <p>
@@ -22,7 +22,7 @@
                             <tr>
                                 <td><c:out value="${dato.id}"/></td>
                                 <td><c:out value="${dato.code}"/></td>
-                                <td><c:out value="${dato.description}"/></td>
+                                <td><c:out value="${dato.name}"/></td>
                                 <td><c:out value="${dato.creation_date}"/></td>
                                 <td>
                                     <a href="editProductFamily.htm?id=${dato.id}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>

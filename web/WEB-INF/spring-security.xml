@@ -31,7 +31,11 @@
         <intercept-url pattern="/editCurrency.htm" access="hasAnyRole('Administrador')"/>
         <intercept-url pattern="/addCurrency.htm" access="hasAnyRole('Administrador')"/>
         <intercept-url pattern="/deleteCurrency.htm" access="hasAnyRole('Administrador')"/>
-        
+        <!--PRODUCT FAMILY-->
+        <intercept-url pattern="/productFamily.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/editProductFamily.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/addProductFamily.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/deleteProductFamily.htm" access="hasAnyRole('Administrador')"/>
         <!----> <!--Etiqueta que valida el formulario de login--> 
         <form-login login-page="/login.htm" default-target-url="/index.htm" 
                     login-processing-url="/j_spring_security_check" authentication-failure-url="/login.htm?error" 

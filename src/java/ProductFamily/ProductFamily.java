@@ -8,15 +8,24 @@ public class ProductFamily {
     private int id; 
     private String code,description;
     private String creation_date;
+    private boolean active;
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
     public ProductFamily() {
     }
 
-    public ProductFamily(int id, String code, String description,  String creation_date) {
+    public ProductFamily(int id, String code, String description,  String creation_date, boolean  active) {
         this.id = id;
         this.code = code;
         this.description = description;
         this.creation_date = creation_date;
+        this.active = active;
     }
 
     public int getId() {

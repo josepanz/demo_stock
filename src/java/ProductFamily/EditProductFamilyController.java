@@ -47,19 +47,19 @@ public class EditProductFamilyController {
         int id = Integer.parseInt(request.getParameter("id"));
         ProductFamily data = this.selectProductFamily(id);
         mav.setViewName("editProductFamily");
-        mav.addObject("productFamily", new ProductFamily(id, data.getCode(), data.getDescription(),  data.getCreation_date()));
+        mav.addObject("productFamily", new ProductFamily(id, data.getCode(), data.getDescription(),  data.getCreation_date(), data.isActive()));
         return mav;
 
     }
 
     public ProductFamily selectProductFamily(int id) {
         final ProductFamily productFamily = new ProductFamily();
-        String query = "SELECT * FROM productFamily WHERE id='" + id + "'";
+        String query = "SELECT * FROM product_family WHERE id='" + id + "'";
         return (ProductFamily) jdbcTemplate.query(query, new ResultSetExtractor<ProductFamily>() {
             public ProductFamily extractData(ResultSet rs) throws SQLException {
                 if (rs.next()) {
                    productFamily.setCode(rs.getString("code"));
-                    productFamily.setDescription(rs.getString("description"));
+                    productFamily.setDescription(rs.getString("name"));
                     productFamily.setCreation_date(rs.getString("creation_date"));
                 }
                 return productFamily;
@@ -81,13 +81,13 @@ public class EditProductFamilyController {
             ModelAndView mav = new ModelAndView();
             ProductFamily data = this.selectProductFamily(id);
             mav.setViewName("editProductFamily");
-            mav.addObject("productFamily", new ProductFamily(id, data.getCode(), data.getDescription(),  data.getCreation_date()));
+            mav.addObject("productFamily", new ProductFamily(id, data.getCode(), data.getDescription(),  data.getCreation_date(), data.isActive()));
             return mav;
 
         } else {
             /*por el momento solo actualiza el code y la descripcion*/
             this.jdbcTemplate.update("UPDATE public.product_family\n"
-                    + "	SET code=?, description=?"
+                    + "	SET code=?, name=?"
                     + "	WHERE id='" + id + "'", c.getCode(), c.getDescription());
 
             return new ModelAndView("redirect:/productFamily.htm");

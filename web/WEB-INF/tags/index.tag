@@ -51,6 +51,22 @@
                     <div class="collapse" id="collapseMaster">
                         <div class="card card-body bg-success">
                             <p>
+                                <a class="list-group-item list-group-item-action bg-success text-white" data-toggle="collapse" href="#collapseProduct" role="button" aria-expanded="false" aria-controls="collapseProduct">
+                                    Productos
+                                </a></p>
+                            <div class="collapse" id="collapseProduct">
+                                <div class="card card-body bg-success border-white ">
+                                    <a id="productId" href="#" class="list-group-item-action bg-success text-white" >Productos</a>
+                                    <a id="productPresentationId" href="#" class="list-group-item-action bg-success text-white" >Presentaciones de Productos</a>
+                                    <a id="productFamilyId" href="productFamily.htm" class="list-group-item-action bg-success text-white" >Familia de Productos</a>
+                                    <a id="productBrandId" href="#" class="list-group-item-action bg-success text-white" >Marca de Productos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapseMaster">
+                        <div class="card card-body bg-success">
+                            <p>
                                 <a class="list-group-item list-group-item-action bg-success text-white" data-toggle="collapse" href="#collapseLocation" role="button" aria-expanded="false" aria-controls="collapseLocation">
                                     Localidades
                                 </a></p>
