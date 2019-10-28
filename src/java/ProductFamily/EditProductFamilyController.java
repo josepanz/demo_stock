@@ -38,8 +38,6 @@ public class EditProductFamilyController {
         this.productFamilyValidator = new ProductFamilyValidator();
     }
 
-   
-
     //recibir los datos y enviar al jsp editProductFamily
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView form(HttpServletRequest request) {
@@ -47,7 +45,7 @@ public class EditProductFamilyController {
         int id = Integer.parseInt(request.getParameter("id"));
         ProductFamily data = this.selectProductFamily(id);
         mav.setViewName("editProductFamily");
-        mav.addObject("productFamily", new ProductFamily(id, data.getCode(), data.getDescription(),  data.getCreation_date(), data.isActive()));
+        mav.addObject("productFamily", new ProductFamily(id, data.getCode(), data.getDescription(), data.getCreation_date(), data.isActive()));
         return mav;
 
     }
@@ -58,7 +56,7 @@ public class EditProductFamilyController {
         return (ProductFamily) jdbcTemplate.query(query, new ResultSetExtractor<ProductFamily>() {
             public ProductFamily extractData(ResultSet rs) throws SQLException {
                 if (rs.next()) {
-                   productFamily.setCode(rs.getString("code"));
+                    productFamily.setCode(rs.getString("code"));
                     productFamily.setDescription(rs.getString("name"));
                     productFamily.setCreation_date(rs.getString("creation_date"));
                 }
@@ -81,7 +79,7 @@ public class EditProductFamilyController {
             ModelAndView mav = new ModelAndView();
             ProductFamily data = this.selectProductFamily(id);
             mav.setViewName("editProductFamily");
-            mav.addObject("productFamily", new ProductFamily(id, data.getCode(), data.getDescription(),  data.getCreation_date(), data.isActive()));
+            mav.addObject("productFamily", new ProductFamily(id, data.getCode(), data.getDescription(), data.getCreation_date(), data.isActive()));
             return mav;
 
         } else {
