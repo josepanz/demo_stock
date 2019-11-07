@@ -3,6 +3,11 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <t:index>
     <jsp:body>
+        <c:if test="${not empty mensaje}">
+            <div class="alert alert-success" role="alert">
+                <p>${mensaje}</p>
+            </div>
+        </c:if>
         <h1>Marca de Productos</h1>        
         <div class="container">
             <div class="row">

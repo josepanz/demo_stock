@@ -1,20 +1,9 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib  prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  /> 
-        <link rel="stylesheet" href="/css/base.css"  /> 
-        <title>Modificar Marca de Productos</title>
-    </head>
-    <body>
-        <c:if test="${not empty mensaje}">
-            <div class="alert alert-success" role="alert">
-                <p>${mensaje}</p>
-            </div>
-        </c:if>
+<%@taglib  prefix="form" uri="http://www.springframework.org/tags/form" %>
+<t:index>
+    <jsp:body>
         <div class="container">
             <h1>
                 Ingrese sus datos 
@@ -36,5 +25,5 @@
                 </form:form>
             </div>
         </div>
-    </body>
-</html>
+    </jsp:body>
+</t:index>
