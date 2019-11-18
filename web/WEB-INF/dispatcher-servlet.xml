@@ -11,11 +11,6 @@
 
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
-    <!--
-    Most controllers will use the ControllerClassNameHandlerMapping above, but
-    for the index controller we are using ParameterizableViewController, so we must
-    define an explicit mapping for it.
-    -->
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
@@ -66,11 +61,17 @@
         </property>
     </bean>
    
-    <bean id="viewResolver"
+   <!-- <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          
           p:prefix="/WEB-INF/jsp/"
-          p:suffix=".jsp" />
-
+          p:suffix=".jsp" />-->
+    
+<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+  <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+  <property name="prefix" value="/WEB-INF/jsp/"></property>
+  <property name="suffix" value=".jsp"></property>
+ </bean>
     <!--
     The index controller.
     -->
@@ -107,6 +108,7 @@
     <!--Controladores de Presentacion de Productos (productPresentation) -->
     <bean name="productPresentationController" class="ProductPresentation.ProductPresentationController"/>
     
+
     
     <!--Controladores de pagina de inicio -->
     <bean name="indexController"

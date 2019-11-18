@@ -35,9 +35,9 @@ public class ProductPresentationController {
     @RequestMapping("productPresentation.htm")
     public ModelAndView productPresentation() {
         ModelAndView mav = new ModelAndView();
-        List datos = this.jdbcTemplate.queryForList("SELECT * FROM produc_presentation");
+        List datos = this.jdbcTemplate.queryForList("SELECT * FROM product_presentation");
         mav.addObject("datos", datos);
-        mav.setViewName("productPresentation");
+        mav.setViewName("productPresentation/productPresentation");
         return mav;
     }
 
