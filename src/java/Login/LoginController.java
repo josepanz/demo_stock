@@ -19,14 +19,14 @@ public class LoginController {
         mav.setViewName("login");
         return mav;
     }
-        
+      /*  
      @RequestMapping(value = "/login.htm?error", method = RequestMethod.GET)
     public String loginError(ModelMap model) {
         JOptionPane.showMessageDialog(null, "llego al error");
         model.addAttribute("error", "true");
         return "login";
 
-    }  
+    }  */
      /*
      @RequestMapping("/index.htm")
     public ModelAndView hello(ModelMap model, Principal principal) {

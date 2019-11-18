@@ -58,6 +58,10 @@
                 <prop key="addProductBrand.htm">productBrandController</prop>
                 <prop key="editProductBrand.htm">editProductBrandController</prop>
                 <prop key="deleteProductBrand.htm">deleteProductBrandController</prop>
+                
+                 <!-- Paginas de Marca de Productos (productBrand)-->  
+                 <prop key="productPresentation.htm">productPresentationController</prop>
+                 <prop key="addProductPresentation.htm">productPresentationController</prop>
             </props>
         </property>
     </bean>
@@ -70,17 +74,17 @@
     <!--
     The index controller.
     -->
-    <!--Controladores de Ciudades -->
+    <!--Controladores de Ciudades(city) -->
     <bean name="cityController" class="City.CityController"/>
     <bean name="editCityController" class="City.EditCityController"/>
     <bean name="deleteCityController" class="City.DeleteCityController"/>
     
-    <!--Controladores de Departamento -->
+    <!--Controladores de Departamento(departament) -->
     <bean name="departamentController" class="Departament.DepartamentController"/>
     <bean name="editDepartamentController" class="Departament.EditDepartamentController"/>
     <bean name="deleteDepartamentController" class="Departament.DeleteDepartamentController"/>
     
-    <!--Controladores de Paises -->
+    <!--Controladores de Paises(country) -->
     <bean name="countryController" class="Country.CountryController"/>
     <bean name="editCountryController" class="Country.EditCountryController"/>
     <bean name="deleteCountryController" class="Country.DeleteCountryController"/>   
@@ -99,6 +103,9 @@
     <bean name="productBrandController" class="ProductBrand.ProductBrandController"/>
     <bean name="editProductBrandController" class="ProductBrand.EditProductBrandController"/>
     <bean name="deleteProductBrandController" class="ProductBrand.DeleteProductBrandController"/>  
+    
+    <!--Controladores de Presentacion de Productos (productPresentation) -->
+    <bean name="productPresentationController" class="ProductPresentation.ProductPresentationController"/>
     
     
     <!--Controladores de pagina de inicio -->
