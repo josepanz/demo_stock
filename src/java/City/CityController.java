@@ -1,25 +1,15 @@
 package City;
 import DataBase.ConnectionDB;
-import Departament.Departament;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
-
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -40,7 +30,7 @@ public class CityController {
         List datos = this.jdbcTemplate.queryForList("SELECT c.id, c.code, c.description, d.description as departament_id, c.creation_date FROM city c "
                 + " join departament d on d.id = c.departament_id ");
         mav.addObject("datos", datos);
-        mav.setViewName("city");
+        mav.setViewName("city/city");
         return mav;
     }
 
@@ -48,7 +38,7 @@ public class CityController {
     public ModelAndView addCity() {
         ModelAndView mav = new ModelAndView();
         mav.addObject("city", new City());
-        mav.setViewName("addCity");
+        mav.setViewName("city/addCity");
         // mav.addObject("mensaje",false);
         return mav;
     }
@@ -71,7 +61,7 @@ public class CityController {
         this.cityValidator.validate(c, result);
         if (result.hasErrors()) {
             ModelAndView mav = new ModelAndView();
-            mav.setViewName("addCity");
+            mav.setViewName("city/addCity");
             mav.addObject("city", new City());
             return mav;
         } else {
@@ -83,7 +73,7 @@ public class CityController {
                     + "	 code, description, departament_id, creation_date)\n"
                     + "	VALUES ( upper(?), ?, ?, current_timestamp);", c.getCode(), c.getDescription(), c.getDepartament_id());
             ModelAndView mav = new ModelAndView();
-            mav.setViewName("addCity");
+            mav.setViewName("city/addCity");
             model.addAttribute("city", new City());//al formulario inicializamos con el contructor vacio, un objeto vacio
             mav.addObject("mensaje", "Insertado Correctamente");//mensaje  
             // return new ModelAndView("redirect:/formCity.htm","mensaje","asdasdsad");//tambien de esta forma mas directa

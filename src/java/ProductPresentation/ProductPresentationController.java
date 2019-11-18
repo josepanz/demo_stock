@@ -45,7 +45,7 @@ public class ProductPresentationController {
     public ModelAndView addProductPresentation() {
         ModelAndView mav = new ModelAndView();
         mav.addObject("productPresentation", new ProductPresentation());
-        mav.setViewName("addProductPresentation");
+        mav.setViewName("productPresentation/addProductPresentation");
         return mav;
     }
 
@@ -57,7 +57,7 @@ public class ProductPresentationController {
         this.productPresentationValidator.validate(p, result);
         if (result.hasErrors()) {
             ModelAndView mav = new ModelAndView();
-            mav.setViewName("addProductPresentation");
+            mav.setViewName("productPresentation/addProductPresentation");
             mav.addObject("productPresentation", new ProductPresentation());
             return mav;
         } else {
@@ -73,7 +73,7 @@ public class ProductPresentationController {
                     p.getBarcode(),
                     p.getCost());
             ModelAndView mav = new ModelAndView();
-            mav.setViewName("addProductPresentation");
+            mav.setViewName("productPresentation/addProductPresentation");
             model.addAttribute("productPresentation", new ProductPresentation());
             mav.addObject("mensaje", "Insertado Correctamente");
             return mav;
@@ -90,5 +90,9 @@ public class ProductPresentationController {
         List brandList = this.jdbcTemplate.queryForList("SELECT * FROM product_brand");
         return brandList;
     }
-
+     @ModelAttribute("productList")
+    public List listarProducto() {
+        List brandList = this.jdbcTemplate.queryForList("SELECT * FROM product");
+        return brandList;
+    }
 }

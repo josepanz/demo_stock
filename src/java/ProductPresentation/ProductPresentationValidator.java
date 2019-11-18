@@ -21,9 +21,19 @@ public class ProductPresentationValidator implements Validator {
     }
 
     @Override
-    public void validate(Object o, Errors errors) {
-       ProductPresentation productPresentatio = new ProductPresentation();
-       ValidationUtils.rejectIfEmptyOrWhitespace(errors, "presentation_code","required.code","El campo code es obligatorio");
+    public void validate(Object p, Errors errors) {
+       ProductPresentation productPresentation = (ProductPresentation)p;
+       ValidationUtils.rejectIfEmptyOrWhitespace(errors, "presentation_code","required.code","El campo Codigo es obligatorio");
+       ValidationUtils.rejectIfEmptyOrWhitespace(errors, "presentation_name","required.code","El campo Nombre de Presentacion es obligatorio");
+       if(productPresentation.getProduct_family_id()==0){
+           errors.rejectValue("product_family_id","required.product_family_id", "Seleccione una Familia de Producto");
+       }
+       if(productPresentation.getProduct_brand_id()==0){
+           errors.rejectValue("product_brand_id","required.product_brand_id", "Seleccione una Marca de Producto");
+       }
+       if(productPresentation.getProduct_id()==0){
+           errors.rejectValue("product_id","required.product_id", "Seleccione un Producto");
+       }
     }
     
 }

@@ -45,6 +45,24 @@
                             </c:forEach>
                         </form:select>
                     </p>
+                     <p>                     
+                        <form:label path="product_id">Producto</form:label>
+                        <a href="addProduct.htm" class="btn btn-success" ><span class="glyphicon glyphicon-plus" aria-hidden="true" style="font-size:10pt;"></span></a>
+                        <form:select path="product_id" cssClass="form-control">
+                            <form:option value="0">Seleccione un Producto</form:option>
+                            <c:forEach items="${productList}" var="product">
+                                <form:option value="${product.id}">${product.name}</form:option>
+                            </c:forEach>
+                        </form:select>
+                    </p>
+                    <p>
+                        <form:label path="barcode">Codigo barra</form:label>
+                        <form:input  path="barcode" cssClass="form-control" />
+                    </p>
+                     <p>
+                        <form:label path="cost">Costo</form:label>
+                        <form:input  path="cost" cssClass="form-control" />
+                    </p>
                     <hr/>
                     <input type="submit" value="Enviar" class="form-control"/>
                 </form:form>              

@@ -50,7 +50,7 @@ public class EditCityController {
         ModelAndView mav = new ModelAndView();
         int id = Integer.parseInt(request.getParameter("id"));
         City data = this.selectCity(id);
-        mav.setViewName("editCity");
+        mav.setViewName("city/editCity");
         mav.addObject("city", new City(id, data.getCode(), data.getDescription(), data.getDepartament_id(), data.getCreation_date()));
         return mav;
 
@@ -86,7 +86,7 @@ public class EditCityController {
         if (result.hasErrors()) {
             ModelAndView mav = new ModelAndView();
             City data = this.selectCity(id);
-            mav.setViewName("editCity");
+            mav.setViewName("city/editCity");
             mav.addObject("city", new City(id, data.getCode(), data.getDescription(), data.getDepartament_id(), data.getCreation_date()));
             return mav;
 
