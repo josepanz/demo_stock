@@ -19,16 +19,16 @@
                     <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                     <p>
                         <form:label path="description">Codigo</form:label>
-                        <form:input  path="descripcion" cssClass="form-control" />
+                        <form:input path="descripcion" cssClass="form-control" />
                     </p>
                     <p>
                         
-                        <form:label path="brand_id">Departamento</form:label>
+                        <form:label path="brand_id">Marca</form:label>
                         <a href="addProductBrand.htm" class="btn btn-success" ><span class="glyphicon glyphicon-plus" aria-hidden="true" style="font-size:10pt;"></span></a>
                         <form:select path="brand_id" cssClass="form-control">
-                            <form:option value="0">Seleccione un departamento</form:option>
+                            <form:option value="0">Seleccione una marca</form:option>
                             <c:forEach items="${brandList}" var="brand">
-                                <form:option value="${brand.id}">${brand.description}</form:option>
+                                <form:option value="${brand.id}">${brand.name}</form:option>
                             </c:forEach>
                         </form:select>
                     </p>

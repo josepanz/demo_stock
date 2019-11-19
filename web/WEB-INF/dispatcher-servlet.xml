@@ -55,8 +55,14 @@
                 <prop key="deleteProductBrand.htm">deleteProductBrandController</prop>
                 
                  <!-- Paginas de Marca de Productos (productBrand)-->  
-                 <prop key="productPresentation.htm">productPresentationController</prop>
-                 <prop key="addProductPresentation.htm">productPresentationController</prop>
+                <prop key="model.htm">modelController</prop>
+                <prop key="addModel.htm">modelController</prop>
+                <prop key="editModel.htm">editController</prop>
+                <prop key="deleteModel.htm">deleteController</prop>
+                
+                <!-- Paginas de Presentacion de Productos (productPresentation)-->  
+                <prop key="productPresentation.htm">productPresentationController</prop>
+                <prop key="addProductPresentation.htm">productPresentationController</prop>
             </props>
         </property>
     </bean>
@@ -99,6 +105,12 @@
     <bean name="editProductBrandController" class="ProductBrand.EditProductBrandController"/>
     <bean name="deleteProductBrandController" class="ProductBrand.DeleteProductBrandController"/>  
     
+     <!--Controladores de Marca de Productos (productBrand) -->
+    <bean name="modelController" class="Model.ModelController"/>
+    <bean name="editController" class="Model.EditModelController"/>
+    <bean name="deleteController" class="Model.DeleteModelController"/>
+    
+     
     <!--Controladores de Presentacion de Productos (productPresentation) -->
     <bean name="productPresentationController" class="ProductPresentation.ProductPresentationController"/>
     

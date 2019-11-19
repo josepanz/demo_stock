@@ -44,7 +44,7 @@ public class ModelController {
     }
      @ModelAttribute("brandList")
     public List listarMarca() {
-        List brandList = this.jdbcTemplate.queryForList("SELECT * FROM product_Brand");
+        List brandList = this.jdbcTemplate.queryForList("SELECT * FROM product_brand");
         return brandList;
     }
     
@@ -62,7 +62,7 @@ public class ModelController {
         } else {
             this.jdbcTemplate.update("INSERT INTO public.model(\n"
                     + "	 description,departament_id, year)\n"
-                    + "	VALUES (?, ?, ?);", m.getDescripcion(), m.getBrand_id(), m.getYear());
+                    + "	VALUES (?, ?, ?);", m.getDescription(), m.getBrand_id(), m.getYear());
             ModelAndView mav = new ModelAndView();
             mav.setViewName("model/addModel");        
             model.addAttribute("model", new Modell());

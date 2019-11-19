@@ -7,16 +7,16 @@ package Model;
  */
 public class Modell {
     int id;
-    String descripcion;
+    String description;
     int brand_id;
     String year;
 
     public Modell() {
     }
 
-    public Modell(int id, String descripcion, int brand_id, String year) {
+    public Modell(int id, String description, int brand_id, String year) {
         this.id = id;
-        this.descripcion = descripcion;
+        this.description = description;
         this.brand_id = brand_id;
         this.year = year;
     }
@@ -29,12 +29,12 @@ public class Modell {
         this.id = id;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getBrand_id() {
@@ -52,5 +52,5 @@ public class Modell {
     public void setYear(String year) {
         this.year = year;
     }
-    
+
 }
