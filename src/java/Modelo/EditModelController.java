@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Modelo;
 
 /**
  *
  * @author NITRO 5
  */
-public class DeleteModelController {
+public class EditModelController {
     
 }

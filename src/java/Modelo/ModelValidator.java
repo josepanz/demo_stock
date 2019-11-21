@@ -1,4 +1,4 @@
-package Model;
+package Modelo;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;

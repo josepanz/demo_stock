@@ -1,4 +1,4 @@
-package Model;
+package Modelo;
 
 import DataBase.ConnectionDB;
 import java.sql.SQLException;

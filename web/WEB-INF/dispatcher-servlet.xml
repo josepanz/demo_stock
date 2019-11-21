@@ -54,11 +54,17 @@
                 <prop key="editProductBrand.htm">editProductBrandController</prop>
                 <prop key="deleteProductBrand.htm">deleteProductBrandController</prop>
                 
-                 <!-- Paginas de Marca de Productos (productBrand)-->  
+                 <!-- Paginas de Marca de Modelo (modelo)-->  
                 <prop key="model.htm">modelController</prop>
                 <prop key="addModel.htm">modelController</prop>
-                <prop key="editModel.htm">editController</prop>
-                <prop key="deleteModel.htm">deleteController</prop>
+                <prop key="editModel.htm">editModelController</prop>
+                <prop key="deleteModel.htm">deleteModelController</prop>
+                
+                <!-- Paginas de Unidad de medida (measuredUnit)-->  
+                <prop key="measuredUnit.htm">measuredUnitController</prop>
+                <prop key="addMeasuredUnit.htm">measuredUnitController</prop>
+                <prop key="editMeasuredUnit.htm">editMeasuredUnitController</prop>
+                <prop key="deleteMeasuredUnit.htm">deleteMeasuredUnitController</prop>
                 
                 <!-- Paginas de Presentacion de Productos (productPresentation)-->  
                 <prop key="productPresentation.htm">productPresentationController</prop>
@@ -105,12 +111,16 @@
     <bean name="editProductBrandController" class="ProductBrand.EditProductBrandController"/>
     <bean name="deleteProductBrandController" class="ProductBrand.DeleteProductBrandController"/>  
     
-     <!--Controladores de Marca de Productos (productBrand) -->
-    <bean name="modelController" class="Model.ModelController"/>
-    <bean name="editController" class="Model.EditModelController"/>
-    <bean name="deleteController" class="Model.DeleteModelController"/>
+     <!--Controladores de Modelo (modelo) -->
+    <bean name="modelController" class="Modelo.ModelController"/>
+    <bean name="editModelController" class="Modelo.EditModelController"/>
+    <bean name="deleteModelController" class="Modelo.DeleteModelController"/>
     
-     
+    <!--Controladores de Unidad de medida(measuredUnit) --> 
+    <bean name="measuredUnitController" class="MeasuredUnit.MeasuredUnitController"/>
+    <bean name="editMeasuredUnitController" class="MeasuredUnit.EditMeasuredUnitController"/>
+    <bean name="deleteMeasuredUnitController" class="MeasuredUnit.DeleteMeasuredUnitController"/>
+    
     <!--Controladores de Presentacion de Productos (productPresentation) -->
     <bean name="productPresentationController" class="ProductPresentation.ProductPresentationController"/>
     
