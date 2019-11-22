@@ -42,7 +42,7 @@
                 <prop key="editCurrency.htm">editCurrencyController</prop>
                 <prop key="deleteCurrency.htm">deleteCurrencyController</prop>
                 
-                   <!-- Paginas de Familia de Productos (productFamily)-->  
+                <!-- Paginas de Familia de Productos (productFamily)-->  
                 <prop key="productFamily.htm">productFamilyController</prop>
                 <prop key="addProductFamily.htm">productFamilyController</prop>
                 <prop key="editProductFamily.htm">editProductFamilyController</prop>
@@ -76,6 +76,9 @@
                 <prop key="addProduct.htm">productController</prop>
                 <prop key="editProduct.htm">editProductController</prop>
                 <prop key="deleteProduct.htm">deleteProductController</prop>
+                
+               <!-- Paginas de Acceso Denegado -->
+                <prop key="accessDenied.htm">accessDeniedController</prop>
             </props>
         </property>
     </bean>
@@ -149,4 +152,9 @@
     <bean name="loginIndexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="login" />
+    
+    <!--Controllador de pagina  DE ACCESO DENEGADO-->  
+      <bean name="accessDeniedController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="accessDenied" />
 </beans>

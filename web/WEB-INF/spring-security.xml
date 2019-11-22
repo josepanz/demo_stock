@@ -10,6 +10,7 @@
   
 <http auto-config="true" use-expressions="true">
         <!-- INDEX --> 
+        <access-denied-handler error-page="/accessDenied.htm" />  
         <intercept-url pattern="/index.htm" access="hasAnyRole('administrador','tester')"/> <!--Interceptar esta direccion cuando el rol del usuario no es admin-->
         <!-- CITY--> 
         <intercept-url pattern="/city.htm" access="hasAnyRole('administrador','tester')"/> <!--Admin tiene acceso a ciudad y demas-->
@@ -50,7 +51,8 @@
             <csrf/>
             
             
-        -->   
+        --> 
+        
     </http>
     <authentication-manager alias="authenticationManager">
         <authentication-provider>
