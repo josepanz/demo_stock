@@ -72,7 +72,7 @@ public class ProductController {
              */
             this.jdbcTemplate.update("INSERT INTO public.product(\n"
                     + "	 code, description, measured_unit_id, alternative_code,creation_date)\n"
-                    + "	VALUES ( upper(?), ?, ?, current_timestamp);", c.getCode(), c.getDescription(), c.getMeasure_unit_id(),c.getAlternative_code());
+                    + "	VALUES ( upper(?), ?, ?, current_timestamp);", c.getCode(), c.getDescription(), c.getMeasured_unit_id(),c.getAlternative_code());
             ModelAndView mav = new ModelAndView();
             mav.setViewName("product/addProduct");
             model.addAttribute("product", new Product());//al formulario inicializamos con el contructor vacio, un objeto vacio

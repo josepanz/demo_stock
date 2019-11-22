@@ -4,17 +4,17 @@ package Product;
 public class Product {
     private int id; 
     private String code,description, alternative_code;
-    private int measure_unit_id;
+    private int measured_unit_id;
     private String creation_date;
 
     public Product() {
     }
 
-    public Product(int id, String code, String description,String alternative_code, int measure_unit_id, String creation_date) {
+    public Product(int id, String code, String description,String alternative_code, int measured_unit_id, String creation_date) {
         this.id = id;
         this.code = code;
         this.description = description;
-        this.measure_unit_id = measure_unit_id;
+        this.measured_unit_id = measured_unit_id;
         this.creation_date = creation_date;
         this.alternative_code = alternative_code;
     }
@@ -51,12 +51,12 @@ public class Product {
         this.alternative_code = alternative_code;
     }
 
-    public int getMeasure_unit_id() {
-        return measure_unit_id;
+    public int getMeasured_unit_id() {
+        return measured_unit_id;
     }
 
-    public void setMeasure_unit_id(int measure_unit_id) {
-        this.measure_unit_id = measure_unit_id;
+    public void setMeasured_unit_id(int measured_unit_id) {
+        this.measured_unit_id = measured_unit_id;
     }
 
 

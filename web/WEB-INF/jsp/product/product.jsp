@@ -3,18 +3,18 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <t:index>
     <jsp:body>
-          <h1>Modelo</h1>        
+          <h1>Producto</h1>        
         <div class="container">
             <div class="row">
                 <p>
-                    <a href="addModel.htm" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Agregar</a>
+                    <a href="addProduct.htm" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Agregar</a>
                 </p>
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
                     <th>Id</th>
                     <th>Descripción</th>
-                    <th>Marca</th>
-                    <th>Anho</th>
+                    <th>Unidad de Medida</th>
+                    <th>Fecha de Creacion</th>
                     <th>Acciones</th>
                     </thead>
                     <tbody>
@@ -22,11 +22,11 @@
                             <tr>
                                 <td><c:out value="${dato.id}"/></td>
                                 <td><c:out value="${dato.description}"/></td>
-                                <td><c:out value="${dato.brand_id}"/></td>
-                                <td><c:out value="${dato.year}"/></td>
+                                <td><c:out value="${dato.measured_unit_id}"/></td>
+                                <td><c:out value="${dato.creation_date}"/></td>
                                 <td>
-                                    <a href="editModel.htm?id=${dato.id}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                    <a href="deleteModel.htm?id=${dato.id}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                    <a href="editProduct.htm?id=${dato.id}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                    <a href="deleteProduct.htm?id=${dato.id}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                 </td>
                             </tr>
                         </c:forEach>

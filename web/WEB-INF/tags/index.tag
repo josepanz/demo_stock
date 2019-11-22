@@ -56,10 +56,10 @@
                                 </a></p>
                             <div class="collapse" id="collapseProduct">
                                 <div class="card card-body bg-success border-white ">
-                                    <a id="productId" href="#" class="list-group-item-action bg-success text-white" >Productos</a>
-                                    <a id="productPresentationId" href="#" class="list-group-item-action bg-success text-white" >Presentaciones de Productos</a>
+                                    <a id="productId" href="product.htm" class="list-group-item-action bg-success text-white" >Productos</a>
+                                    <a id="productPresentationId" href="productPresentation.htm" class="list-group-item-action bg-success text-white" >Presentaciones de Productos</a>
                                     <a id="productFamilyId" href="productFamily.htm" class="list-group-item-action bg-success text-white" >Familia de Productos</a>
-                                    <a id="productBrandId" href="#" class="list-group-item-action bg-success text-white" >Marca de Productos</a>
+                                    <a id="productBrandId" href="productBrand.htm" class="list-group-item-action bg-success text-white" >Marca de Productos</a>
                                 </div>
                             </div>
                         </div>

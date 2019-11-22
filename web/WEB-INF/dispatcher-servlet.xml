@@ -69,6 +69,13 @@
                 <!-- Paginas de Presentacion de Productos (productPresentation)-->  
                 <prop key="productPresentation.htm">productPresentationController</prop>
                 <prop key="addProductPresentation.htm">productPresentationController</prop>
+                
+                
+                <!-- Paginas de Productos -->
+                <prop key="product.htm">productController</prop>
+                <prop key="addProduct.htm">productController</prop>
+                <prop key="editProduct.htm">editProductController</prop>
+                <prop key="deleteProduct.htm">deleteProductController</prop>
             </props>
         </property>
     </bean>
@@ -124,7 +131,10 @@
     <!--Controladores de Presentacion de Productos (productPresentation) -->
     <bean name="productPresentationController" class="ProductPresentation.ProductPresentationController"/>
     
-
+    <!--Controladores de Productos  -->
+    <bean name="productController" class="Product.ProductController"/>
+    <bean name="editProductController" class="Product.EditProductController"/>
+    <bean name="deleteProductController" class="Product.DeleteProductController"/>
     
     <!--Controladores de pagina de inicio -->
     <bean name="indexController"

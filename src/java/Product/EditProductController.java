@@ -51,7 +51,7 @@ public class EditProductController {
         int id = Integer.parseInt(request.getParameter("id"));
         Product data = this.selectProduct(id);
         mav.setViewName("product/editProduct");
-        mav.addObject("product", new Product(id, data.getCode(), data.getDescription(),data.getAlternative_code(), data.getMeasure_unit_id(), data.getCreation_date()));
+        mav.addObject("product", new Product(id, data.getCode(), data.getDescription(),data.getAlternative_code(), data.getMeasured_unit_id(), data.getCreation_date()));
         return mav;
 
     }
@@ -64,7 +64,7 @@ public class EditProductController {
                 if (rs.next()) {
                     product.setCode(rs.getString("code"));
                     product.setDescription(rs.getString("description"));
-                    product.setMeasure_unit_id(Integer.parseInt(rs.getString("measured_unit_id")));
+                    product.setMeasured_unit_id(Integer.parseInt(rs.getString("measured_unit_id")));
                     product.setCreation_date(rs.getString("creation_date"));
                     product.setAlternative_code(rs.getString("alternative_code"));
                 }
@@ -87,14 +87,14 @@ public class EditProductController {
             ModelAndView mav = new ModelAndView();
             Product data = this.selectProduct(id);
             mav.setViewName("product/editProduct");
-            mav.addObject("product", new Product(id, data.getCode(), data.getDescription(), data.getAlternative_code(), data.getMeasure_unit_id(), data.getCreation_date()));
+            mav.addObject("product", new Product(id, data.getCode(), data.getDescription(), data.getAlternative_code(), data.getMeasured_unit_id(), data.getCreation_date()));
             return mav;
 
         } else {
             /*por el momento solo actualiza el code y la descripcion*/
             this.jdbcTemplate.update("UPDATE public.product\n"
                     + "	SET code=?, description=?,measured_unit_id=?, alternative_code=?"
-                    + "	WHERE id='" + id + "'", c.getCode(), c.getDescription(),c.getMeasure_unit_id(), c.getAlternative_code());
+                    + "	WHERE id='" + id + "'", c.getCode(), c.getDescription(),c.getMeasured_unit_id(), c.getAlternative_code());
 
             return new ModelAndView("redirect:/product.htm");
         }

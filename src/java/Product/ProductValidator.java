@@ -19,7 +19,7 @@ public class ProductValidator implements Validator {
         Product product = (Product)c;    
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "code","required.code","El campo code es obligatorio");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description","required.description","El campo description es obligatorio");
-        if(product.getMeasure_unit_id()==0){
+        if(product.getMeasured_unit_id()==0){
             errors.rejectValue("measured_unit_id","required.measured_unit_id", "Seleccione un measured_unito");
         }
         //se comenta porque la fecha de creacion toma el dia del sistema al momento de insertar
