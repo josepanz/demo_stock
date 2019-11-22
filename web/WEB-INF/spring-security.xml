@@ -56,8 +56,9 @@
     </http>
     <authentication-manager alias="authenticationManager">
         <authentication-provider>
+            <password-encoder hash="md5"/>
             <jdbc-user-service data-source-ref="dataSource" 
-                               users-by-username-query="SELECT username, password,1 as enabled FROM userss  WHERE username=?" 
+                               users-by-username-query="SELECT username, password,1 as enabled FROM users  WHERE username=?" 
                                authorities-by-username-query="SELECT username, authority,1 as enabled FROM authorities WHERE username=?" />
             <!--users-by-username-query consulta de todos los usuarios que tienen el username seteado por el usuario-->
             <!--authorities-by-username-query consulta de todos los roles que tiene ese usuario.-->
