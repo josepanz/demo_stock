@@ -10,29 +10,29 @@
   
 <http auto-config="true" use-expressions="true">
         <!-- INDEX --> 
-        <intercept-url pattern="/index.htm" access="hasAnyRole('administrador')"/> <!--Interceptar esta direccion cuando el rol del usuario no es admin-->
+        <intercept-url pattern="/index.htm" access="hasAnyRole('administrador','tester')"/> <!--Interceptar esta direccion cuando el rol del usuario no es admin-->
         <!-- CITY--> 
-        <intercept-url pattern="/city.htm" access="hasAnyRole('administrador')"/> <!--Admin tiene acceso a ciudad y demas-->
+        <intercept-url pattern="/city.htm" access="hasAnyRole('administrador','tester')"/> <!--Admin tiene acceso a ciudad y demas-->
         <intercept-url pattern="/editCity.htm" access="hasAnyRole('administrador')"/>                                             
         <intercept-url pattern="/addCity.htm" access="hasAnyRole('administrador')"/> 
-        <intercept-url pattern="/deleteCity.htm" access="hasAnyRole('administrador')"/> 
+        <intercept-url pattern="/deleteCity.htm" access="hasAnyRole('administrador',)"/> 
         <!--DEPARTAMENT-->
-        <intercept-url pattern="/departament.htm" access="hasAnyRole('administrador')"/> 
+        <intercept-url pattern="/departament.htm" access="hasAnyRole('administrador','tester')"/> 
         <intercept-url pattern="/editDepartament.htm" access="hasAnyRole('administrador')"/> 
         <intercept-url pattern="/addDepartament.htm" access="hasAnyRole('administrador')"/> 
         <intercept-url pattern="/deleteDepartament.htm" access="hasAnyRole('administrador')"/>
         <!--COUNTRY-->
-        <intercept-url pattern="/country.htm" access="hasAnyRole('administrador')"/>
+        <intercept-url pattern="/country.htm" access="hasAnyRole('administrador','tester')"/>
         <intercept-url pattern="/editCountry.htm" access="hasAnyRole('administrador')"/>
         <intercept-url pattern="/addCountry.htm" access="hasAnyRole('administrador')"/>
         <intercept-url pattern="/deleteCountry.htm" access="hasAnyRole('administrador')"/>     
         <!--CURRENCY-->
-        <intercept-url pattern="/currency.htm" access="hasAnyRole('administrador')"/>
+        <intercept-url pattern="/currency.htm" access="hasAnyRole('administrador','tester')"/>
         <intercept-url pattern="/editCurrency.htm" access="hasAnyRole('administrador')"/>
         <intercept-url pattern="/addCurrency.htm" access="hasAnyRole('administrador')"/>
         <intercept-url pattern="/deleteCurrency.htm" access="hasAnyRole('administrador')"/>
         <!--PRODUCT FAMILY-->
-        <intercept-url pattern="/productFamily.htm" access="hasAnyRole('administrador')"/>
+        <intercept-url pattern="/productFamily.htm" access="hasAnyRole('administrador','tester')"/>
         <intercept-url pattern="/editProductFamily.htm" access="hasAnyRole('administrador')"/>
         <intercept-url pattern="/addProductFamily.htm" access="hasAnyRole('administrador')"/>
         <intercept-url pattern="/deleteProductFamily.htm" access="hasAnyRole('administrador')"/>
