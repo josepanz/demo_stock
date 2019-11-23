@@ -73,7 +73,7 @@ public class EditMeasuredUnitController {
         if (result.hasErrors()) {
             ModelAndView mav = new ModelAndView();
             MeasuredUnit data = this.selectMeasuredUnit(id);
-            mav.setViewName("measuredUnit/editCountry");
+            mav.setViewName("measuredUnit/editMeasuredUnit");
             mav.addObject("measuredUnit", new MeasuredUnit(id, data.getDescription(),  data.getCreation_date()));
             return mav;
 

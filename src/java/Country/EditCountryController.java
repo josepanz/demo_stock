@@ -46,8 +46,8 @@ public class EditCountryController {
         ModelAndView mav = new ModelAndView();
         int id = Integer.parseInt(request.getParameter("id"));
         Country data = this.selectCountry(id);
-        mav.setViewName("measuredUnit/editmeasuredUnit");
-        mav.addObject("measuredUnit", new Country(id, data.getCode(), data.getDescription(),  data.getCreation_date()));
+        mav.setViewName("editCountry");
+        mav.addObject("country", new Country(id, data.getCode(), data.getDescription(),  data.getCreation_date()));
         return mav;
 
     }
