@@ -12,6 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>No tienes accesso hijo de puta</h1>
+        <script>
+            if(confirm('NO POSEE LOS PERMISOS PARA INGRESAR A ESTE APARTADO'))
+                alert('Favor regrese a la pagina anterior o contacte con el administrador');
+                //window.history.back();
+                //window.history.go(-2);
+            else
+                alert('Accion Detenida');
+        </script>
     </body>
 </html>
