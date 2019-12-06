@@ -9,16 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link href="css/accessDeniedCss.css" rel="stylesheet">
+        <title>ERROR 403</title>
     </head>
     <body>
-        <script>
-            if(confirm('NO POSEE LOS PERMISOS PARA INGRESAR A ESTE APARTADO'))
-                alert('Favor regrese a la pagina anterior o contacte con el administrador');
-                //window.history.back();
-                //window.history.go(-2);
-            else
-                alert('Accion Detenida');
-        </script>
+        <div class="lock"></div>
+        <div class="message">
+            <h1 align="center"> El acceso a esta página está restringido</h1>
+            <p align="center">Favor regrese a la pagina anterior o contacte con el administrador.</p>
+        </div>
     </body>
 </html>
