@@ -38,7 +38,7 @@ public class CurrencyController {
         ModelAndView mav = new ModelAndView();
         List datos = this.jdbcTemplate.queryForList("SELECT * FROM currency");
         mav.addObject("datos", datos);
-        mav.setViewName("currency");
+        mav.setViewName("currency/currency");
         return mav;
     }
 
@@ -46,7 +46,7 @@ public class CurrencyController {
     public ModelAndView addCurrency() {
         ModelAndView mav = new ModelAndView();
         mav.addObject("currency", new Currency());
-        mav.setViewName("addCurrency");
+        mav.setViewName("currency/addCurrency");
         return mav;
     }
     //recibir y validar datos del formulario
@@ -59,7 +59,7 @@ public class CurrencyController {
         this.currencyValidator.validate(c, result);
         if (result.hasErrors()) {
             ModelAndView mav = new ModelAndView();
-            mav.setViewName("addCurrency");
+            mav.setViewName("currency/addCurrency");
             mav.addObject("currency", new City());
             return mav;
         } else {
@@ -71,7 +71,7 @@ public class CurrencyController {
                     + "	 code, symbol, description, creation_date)\n"
                     + "	VALUES ( upper(?), ?, ?, current_timestamp);", c.getCode(), c.getDescription(), c.getSymbol());
             ModelAndView mav = new ModelAndView();
-            mav.setViewName("addCurrency");
+            mav.setViewName("currency/addCurrency");
             model.addAttribute("currency", new Currency());//al formulario inicializamos con el contructor vacio, un objeto vacio
             mav.addObject("mensaje", "Insertado Correctamente");//mensaje  
             // return new ModelAndView("redirect:/formCity.htm","mensaje","asdasdsad");//tambien de esta forma mas directa

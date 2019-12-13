@@ -34,10 +34,9 @@ public class EditCurrencyController {
         ModelAndView mav = new ModelAndView();
         int id = Integer.parseInt(request.getParameter("id"));
         Currency data = this.selectCurrency(id);
-        mav.setViewName("editCurrency");
+        mav.setViewName("currency/editCurrency");
         mav.addObject("currency", new Currency(data.getId(),data.getCode(), data.getSymbol(), data.getDescription(), data.getCreation_date()));
         return mav;
-
     }
 
     public Currency selectCurrency(int id) {
@@ -70,7 +69,7 @@ public class EditCurrencyController {
         if (result.hasErrors()) {
             ModelAndView mav = new ModelAndView();
             Currency data = this.selectCurrency(id);
-            mav.setViewName("editCurrency");
+            mav.setViewName("currency/editCurrency");
             mav.addObject("currency", new Currency(id, data.getCode(), data.getSymbol(), data.getDescription(), data.getCreation_date()));
             return mav;
 
@@ -78,7 +77,6 @@ public class EditCurrencyController {
             this.jdbcTemplate.update("UPDATE public.currency\n"
                     + "	SET description=?"
                     + "	WHERE id='" + id + "'", m.getDescription());
-
             return new ModelAndView("redirect:/currency.htm");
         }
     }
