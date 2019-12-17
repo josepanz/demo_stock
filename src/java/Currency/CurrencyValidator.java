@@ -9,10 +9,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-/**
- *
- * @author Hitler
- */
+
 public class CurrencyValidator implements Validator{
 
     @Override
