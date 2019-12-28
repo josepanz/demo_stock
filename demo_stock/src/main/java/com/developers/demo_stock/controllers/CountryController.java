@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -74,13 +73,14 @@ public class CountryController {
 		model.addAttribute("title", "Editar País");
 		if (result.hasErrors()) {
 			return "country/editCountry";
-		}
+		}						
 		try {
-
+		
 			//countryService.save(country);
 			countryService.updateCountry(country);
 			status.setComplete();
 			flash.addFlashAttribute("success", "Pais editado con éxito!");
+	
 
 		} catch (Exception e) {
 			model.addAttribute("error", e.getMessage());
