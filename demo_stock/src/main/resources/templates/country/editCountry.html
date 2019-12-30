@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout/layout :: head"></head>
+<head th:replace="layout/index :: head"></head>
 <title></title>
-<header th:replace="layout/layout :: header"></header>
-
 <body>
+<div th:replace="layout/index :: wrapper"></div>  
     <div class="container py-4">
         <div class="card bg-dark text-white">
             <div class="card-header">
-                <h2>Editar Pais</h2>
+                <h2>Agregar Pais</h2>
             </div>
             <div class="card-body">
                 <form th:action="@{/editCountry}" th:object="${country}" method="post">
@@ -39,6 +38,7 @@
 </div>
 </div>
 </div>
-<footer th:replace="layout/layout :: footer"></footer>
+<div th:replace="layout/index :: scripts" ></div>
 </body>
+	<footer th:replace="layout/index :: footer"></footer>
 </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout/layout :: head"></head>
+<head th:replace="layout/index :: head"></head>
 <title></title>
 <body>
-<header th:replace="layout/layout :: header"></header>        
+<div th:replace="layout/index :: wrapper"></div>     
         <div class="container">
             <div class="row">
                 <p>
@@ -35,6 +35,7 @@
             </div>
         </div>
         
-	<footer th:replace="layout/layout :: footer"></footer>
+<div th:replace="layout/index :: scripts" ></div>
 </body>
+	<footer th:replace="layout/index :: footer"></footer>
 </html>
