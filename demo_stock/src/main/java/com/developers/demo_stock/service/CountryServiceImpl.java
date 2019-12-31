@@ -31,7 +31,8 @@ public class CountryServiceImpl implements CountryService {
 	@Override
 	@Transactional
 	public void delete(Integer id) {
-		countryRepo.deleteById(id);		
+		countryRepo.deleteById(id);
+		
 	}
 
 	@Override
@@ -42,9 +43,36 @@ public class CountryServiceImpl implements CountryService {
 	}
 
 	@Override
-	@Transactional(readOnly = true)
 	public Optional<Country> findById(Integer id) {	
 		return countryRepo.findById(id);
-	}		
+	}
+
+	@Override
+	@Transactional
+	public Country updateCountry(Country fromCountry) {
+		Country toCountry = getCountryById(fromCountry.getId());
+		mapCountry(fromCountry, toCountry);
+		return countryRepo.save(toCountry);
+	
+		//return null;
+	}
+	
+	protected void mapCountry(Country from,Country to) {
+		to.setCode(from.getCode());
+		to.setDescription(from.getCode());
+
+	}
+
+	@Override
+	public Country getCountryById(Integer id)  {	
+			Optional<Country> optionalCountry = countryRepo.findById(id);
+		      return optionalCountry.get();
+	}
+
+	
+
+
+
+ 
 
 }

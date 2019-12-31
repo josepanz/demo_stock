@@ -15,6 +15,11 @@ public void save(Country country);
 
 public void delete(Integer id);
 
-public Optional<Country> findById(Integer id);
+Optional<Country> findById(Integer id);
+
+public Country updateCountry(Country country);
+
+public Country getCountryById(Integer id);
+
 
 }

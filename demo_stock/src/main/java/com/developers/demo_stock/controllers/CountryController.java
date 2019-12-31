@@ -1,9 +1,6 @@
 package com.developers.demo_stock.controllers;
 
-
 import java.util.Map;
-import java.util.Optional;
-
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,20 +10,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.developers.demo_stock.entity.Country;
 import com.developers.demo_stock.service.CountryService;
 
 @Controller
-@SessionAttributes("country")
 public class CountryController {
 
 	@Autowired
-	private CountryService countryService;
+	CountryService countryService;
 
 	@GetMapping("/country")
 	public String city(Model model) {
@@ -43,9 +37,9 @@ public class CountryController {
 		model.put("country", country);
 		/* para poner titulo pag. web titulo(se encuentra en el layout) */
 		model.put("title", "Agregar Pais");
-		
 		return "country/addCountry";
 	}
+
 	@PostMapping("/addCountry")
 	public String postCountry(@Valid @ModelAttribute("country") Country country, BindingResult result, Model model,
 			SessionStatus status) {
@@ -67,66 +61,31 @@ public class CountryController {
 	}
 
 	@GetMapping("/editCountry/{id}")
-	public String getEditCountry(@PathVariable(value = "id") Integer id, Map<String, Object> model) {		
-		Optional<Country> country= countryService.findById(id);
-		System.out.println(country.toString());
-		model.put("title", "Editar Pais");
-		model.put("country", country);
-		System.err.println("id recuperado en getmappint edit"+ country.get().getId());
+	public String getEditCountry(@PathVariable(value = "id") Integer id, Model model) {
+		model.addAttribute("country", countryService.findById(id));
+		model.addAttribute("title", "Editar Pais");
 		return "country/editCountry";
 	}
-/*
+
 	@PostMapping("/editCountry")
-	public String putEditCountry(@Valid  Optional<Country> country, BindingResult result, Model model,
+	public String putEditCountry(@Valid @ModelAttribute("country") Country country, BindingResult result, Model model,
 			SessionStatus status, RedirectAttributes flash) {
 		model.addAttribute("title", "Editar País");
 		if (result.hasErrors()) {
 			return "country/editCountry";
-		}
-		System.out.println("------------------------- metodo put");
+		}						
 		try {
-			if (country.get().getId()==0) {
-				System.err.println("nulo viejo");
-				System.out.println(country.get().toString());
-				
-			}else {
-				System.out.println("no es nuelo man");
-			}
-			/*
-			System.out.println("putoooooooooo"+opcion.get().getId());
-		   // Optional<Country> country = countryService.findById(country.);
-			//countryService.save(country);		
-		    System.err.println("entrando post editcountry");
-	        System.err.println("---------------"+country.toString());
-			System.out.println("Formulario " + country.getId());
-			System.out.println("Formulario " + country.getDescription());
-			countryService.updateCountry(country);*/
-			//status.setComplete();
-			//flash.addFlashAttribute("success", "Pais editado con éxito!");
+		
+			//countryService.save(country);
+			countryService.updateCountry(country);
+			status.setComplete();
+			flash.addFlashAttribute("success", "Pais editado con éxito!");
 	
 
-		//} catch (Exception e) {
-		//	model.addAttribute("error", e.getMessage());
-		//}
-		
-		//return "redirect:/country";
-	//}
-	
-	@PostMapping("/editCountry")
-	public String putEditCountry(@Valid Country country, BindingResult result, Model model,
-			 RedirectAttributes flash, SessionStatus status) {
-      
-		if (result.hasErrors()) {
-			model.addAttribute("title", "Editar País");
-			return "country/editCountry";
-		}		
-		try {
-			countryService.save(country);            
-			status.setComplete();
-			flash.addFlashAttribute("success", "Pais editado con éxito!");			
 		} catch (Exception e) {
-			flash.addFlashAttribute("error", e.getMessage());
+			model.addAttribute("error", e.getMessage());
 		}
+		
 		return "redirect:/country";
 	}
 

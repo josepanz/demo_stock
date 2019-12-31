@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout/index :: head"></head>
+<head th:replace="layout/layout :: head"></head>
 <title></title>
+<header th:replace="layout/layout :: header"></header>
 
 <body>
-<div th:replace="layout/index :: wrapper"></div>  
     <div class="container py-4">
         <div class="card bg-dark text-white">
             <div class="card-header">
@@ -39,7 +39,6 @@
 </div>
 </div>
 </div>
-<div th:replace="layout/index :: scripts" ></div>
+<footer th:replace="layout/layout :: footer"></footer>
 </body>
-	<footer th:replace="layout/index :: footer"></footer>
 </html>
