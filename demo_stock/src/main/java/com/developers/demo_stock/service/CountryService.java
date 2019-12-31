@@ -4,7 +4,6 @@ package com.developers.demo_stock.service;
 
 import java.util.Optional;
 
-
 import com.developers.demo_stock.entity.Country;
 
 public interface CountryService  {
@@ -17,9 +16,10 @@ public void delete(Integer id);
 
 Optional<Country> findById(Integer id);
 
+public Country getCountryById(Integer id) ;  
+
 public Country updateCountry(Country country);
 
-public Country getCountryById(Integer id);
 
 
 }

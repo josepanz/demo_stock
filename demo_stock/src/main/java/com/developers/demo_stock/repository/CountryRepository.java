@@ -9,5 +9,4 @@ public interface CountryRepository extends CrudRepository<Country, Integer>{
 	
 /*tiene metodos, pero si queremos crear nuestros propios metodos los creamos aqui*/
 	
-	
 }

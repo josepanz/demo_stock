@@ -48,7 +48,6 @@ public class CountryServiceImpl implements CountryService {
 	}
 
 	@Override
-	@Transactional
 	public Country updateCountry(Country fromCountry) {
 		Country toCountry = getCountryById(fromCountry.getId());
 		mapCountry(fromCountry, toCountry);
@@ -64,14 +63,19 @@ public class CountryServiceImpl implements CountryService {
 	}
 
 	@Override
-	public Country getCountryById(Integer id)  {	
-			Optional<Country> optionalCountry = countryRepo.findById(id);
-		      return optionalCountry.get();
+	public Country getCountryById(Integer id)  {
+		Country country = new Country();
+		try {
+			country = countryRepo.findById(id).orElseThrow(() -> new Exception("Country does not exist"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return country;
 	}
 
 	
-
-
+	
 
  
 
